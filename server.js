@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-require('dotenv').config();
+// require('dotenv').config();
 // const {compiler,result}=require('./compiler');
 const fetch = require('node-fetch');
 const Bluebird = require('bluebird');
