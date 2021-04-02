@@ -3,4 +3,4 @@ package-lock.json
 .vscode
 .env
 sphere-engine-api
-compiler.js
+compiler.*
