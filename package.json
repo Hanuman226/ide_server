@@ -1,0 +1,22 @@
+{
+  "name": "ide_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "devstart": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "author": "Hanuman Singh Rajput",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.7"
+  }
+}
