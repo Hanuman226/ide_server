@@ -13,7 +13,7 @@ const PORT=process.env.PORT;
 app.use(express.json());
 
 
-const whitelist = ['https://www.errortechnologies.com', 'http://example2.com']
+const whitelist = ['https://www.errortechnologies.com', 'https://javaonlineide.netlify.app']
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
