@@ -64,7 +64,7 @@ fetch('https://' + endpoint + '/api/v4/submissions?access_token=' + accessToken,
  .catch((error) => {
    console.error('Error:', error);
  }); })
- },9000);  
+ },5000);  
    
 });
 
