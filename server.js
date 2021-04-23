@@ -34,50 +34,51 @@ app.get('/',(req,res)=>{
 
 app.post('/compiler/java',(req,res)=>{
     
-fetch('https://' + endpoint + '/api/v4/submissions?access_token=' + accessToken, {
-   method: 'POST', 
-   mode: "no-cors",
-   headers: {
-     'Content-Type': 'application/json',
-   },
-   body: JSON.stringify(req.body),
- })
- .then(response => response.json())
- .then( data => {
-   console.log('Success:', data);
-   submissionId=  data.id;
- })
- .catch((error) => {
-   console.error('Error:', error);
- });
+// fetch('https://' + endpoint + '/api/v4/submissions?access_token=' + accessToken, {
+//    method: 'POST', 
+//    mode: "no-cors",
+//    headers: {
+//      'Content-Type': 'application/json',
+//    },
+//    body: JSON.stringify(req.body),
+//  })
+//  .then(response => response.json())
+//  .then( data => {
+//    console.log('Success:', data);
+//    submissionId=  data.id;
+//  })
+//  .catch((error) => {
+//    console.error('Error:', error);
+//  });
  
  
   
- setTimeout(() => {
-     fetch('https://' + endpoint + '/api/v4/submissions/' + submissionId +  '?access_token=' + accessToken)
- .then(res=>res.json())
- .then(response => {
-   // console.log('Success:', response.result);
-   var out= response.result.streams;
-   if(out.output){stream='output'}
-   else if(out.cmpinfo){stream='cmpinfo'}
-   else if(out.error){stream='error'}
+//  setTimeout(() => {
+//      fetch('https://' + endpoint + '/api/v4/submissions/' + submissionId +  '?access_token=' + accessToken)
+//  .then(res=>res.json())
+//  .then(response => {
+//    // console.log('Success:', response.result);
+//    var out= response.result.streams;
+//    if(out.output){stream='output'}
+//    else if(out.cmpinfo){stream='cmpinfo'}
+//    else if(out.error){stream='error'}
  
-   console.log(stream);
- })
- .catch((error) => {
-   console.error('Error:', error);
- }).then(()=>{
-     fetch('https://' + endpoint + '/api/v4/submissions/' + submissionId + '/'+stream+ '?access_token=' + accessToken)
- .then(res=>res.text())
- .then(response => {
-  console.log('Success:', response);
-   res.send(response);
- })
- .catch((error) => {
-   console.error('Error:', error);
- }); })
- },5000);  
+//    console.log(stream);
+//  })
+//  .catch((error) => {
+//    console.error('Error:', error);
+//  }).then(()=>{
+//      fetch('https://' + endpoint + '/api/v4/submissions/' + submissionId + '/'+stream+ '?access_token=' + accessToken)
+//  .then(res=>res.text())
+//  .then(response => {
+//   console.log('Success:', response);
+//    res.send(response);
+//  })
+//  .catch((error) => {
+//    console.error('Error:', error);
+//  }); })
+//  },5000);  
+res.send(req.body.input)
    
 });
 
